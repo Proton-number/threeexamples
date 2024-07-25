@@ -1,8 +1,6 @@
 import { Html, Text } from "@react-three/drei";
 import React, { useRef } from "react";
 import { useLoader, useThree } from "@react-three/fiber";
-import { Typography, Box } from "@mui/material";
-import { FontLoader } from "three-stdlib";
 
 function Underlay() {
   const ref = useRef();
