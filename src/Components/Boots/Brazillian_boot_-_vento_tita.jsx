@@ -22,7 +22,7 @@ export function Model(props) {
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     ref.current.rotation.set(143, 86, 74);
-    ref.current.position.y = (1 + Math.sin(t / 3)) / 10;
+    ref.current.position.y = -0.8 + (1 + Math.sin(t / 3)) / 10;
   });
 
   // const { rotationX, rotationY, rotationZ } = useControls({
@@ -33,7 +33,7 @@ export function Model(props) {
 
   return (
     <group scale={viewport.width / 10} {...props} dispose={null}>
-      <group ref={ref} position={[-0.16, -0.5, -0.22]} rotation={[74, 86, 143]}>
+      <group ref={ref} position={[-0.16, -0.8, -0.22]} rotation={[74, 86, 143]}>
         <group>
           <group scale={[1.003, 1, 1]}>
             <mesh
