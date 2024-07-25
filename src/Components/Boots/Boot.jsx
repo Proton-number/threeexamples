@@ -1,6 +1,7 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { OrbitControls, useProgress, Html } from "@react-three/drei";
 import { Model } from "./Brazillian_boot_-_vento_tita";
+import { useControls } from "leva";
 
 function Loader() {
   const { progress } = useProgress();
@@ -8,11 +9,17 @@ function Loader() {
 }
 
 function Boot() {
+  // const { intensity, positionX, positionY, positionZ } = useControls({
+  //   intensity: { value: 3, min: 0, max: 10, step: 0.1 },
+  //   positionX: { value: 0, min: -10, max: 10, step: 0.1 },
+  //   positionY: { value: 3, min: -10, max: 10, step: 0.1 },
+  //   positionZ: { value: 3, min: -10, max: 10, step: 0.1 },
+  // });
   return (
     <>
       {/* <OrbitControls /> */}
       <ambientLight intensity={4} />
-      <directionalLight position={[0, 3, 3]} intensity={3} />
+      <directionalLight position={[-1.7, 2.4, 4.9]} intensity={4.8} />
 
       <Suspense fallback={<Loader />}>
         <Model />

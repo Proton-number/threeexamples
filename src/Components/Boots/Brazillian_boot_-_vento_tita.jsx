@@ -19,27 +19,21 @@ export function Model(props) {
   const { viewport } = useThree();
   const ref = useRef();
 
-  useFrame(() => {
-    // ref.current.rotation.x += 0.02;
-    // ref.current.rotation.y += 0.02;
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime();
+    ref.current.rotation.set(143, 86, 74);
+    ref.current.position.y = (1 + Math.sin(t / 3)) / 10;
   });
 
-  // const materialProps = useControls({
-  //   thickness: { value: 0.2, min: 0, max: 3, step: 0.05 },
-  //   roughness: { value: 0, min: 0, max: 1, step: 0.1 },
-  //   transmission: { value: 1, min: 0, max: 1, step: 0.1 },
-  //   ior: { value: 1.2, min: 0, max: 3, step: 0.1 },
-  //   chromaticAberration: { value: 0.02, min: 0, max: 1 },
-  //   backside: { value: true },
+  // const { rotationX, rotationY, rotationZ } = useControls({
+  //   rotationX: { value: 0, min: 0, max: 360, step: 2 },
+  //   rotationY: { value: 0, min: 0, max: 360, step: 1 },
+  //   rotationZ: { value: 0, min: 0, max: 360, step: 1 },
   // });
 
   return (
     <group scale={viewport.width / 10} {...props} dispose={null}>
-      <group
-        ref={ref}
-        position={[-0.16, -0.5, -0.22]}
-        rotation={[0, -Math.PI / 2, 0]}
-      >
+      <group ref={ref} position={[-0.16, -0.5, -0.22]} rotation={[74, 86, 143]}>
         <group>
           <group scale={[1.003, 1, 1]}>
             <mesh

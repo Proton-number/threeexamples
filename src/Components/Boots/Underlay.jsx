@@ -9,6 +9,7 @@ function Underlay() {
   const { viewport } = useThree();
 
   const fontProps = { font: "/Boot/PTSerif-Italic.woff", fontSize: 1.5 };
+  const fontProps2 = { font: "/Boot/PTSerif-Italic.woff", fontSize: 3.5 };
 
   // Calculate position based on viewport size
   let positionX1, positionY1;
@@ -64,7 +65,7 @@ function Underlay() {
           THE SISTRUM
         </Text>
         <Text
-          position={[0.1, -1.92, -2]}
+          position={[-0.1, -1.22, -2]}
           fontSize={1}
           color={"hsl(25, 17%, 49%)"}
           {...fontProps}
@@ -74,7 +75,7 @@ function Underlay() {
         </Text>
 
         <Text
-          position={[0.5, -2.92, -2]}
+          position={[0.5, -2.42, -2]}
           fontSize={1}
           color={"hsl(25, 17%, 49%)"}
           {...fontProps}
@@ -84,7 +85,7 @@ function Underlay() {
         </Text>
 
         <Text
-          position={[-0.1, -3.92, -2]}
+          position={[-0.6, -3.92, -2]}
           fontSize={1}
           color={"hsl(25, 17%, 49%)"}
           {...fontProps}
@@ -94,7 +95,7 @@ function Underlay() {
         </Text>
 
         <Text
-          position={[-0.2, -5.02, -2]}
+          position={[-0.6, -5.32, -2]}
           fontSize={1}
           color={"hsl(25, 17%, 49%)"}
           {...fontProps}
@@ -131,17 +132,17 @@ function Underlay() {
         position={[positionX1, positionY1, -3]}
       >
         <mesh position={[18, 0, -4.1]}>
-          <planeGeometry args={[10, 30.5]} />
+          <planeGeometry args={[11, 30.5]} />
           <meshBasicMaterial color="hsl(25, 17%, 49%)" />
         </mesh>
-        <Html position={[16.3, -3, -4]} color={"hsl(0, 0%, 7%)"}>
-          <Box>
-            <Typography variant="h1" sx={{ fontSize: "10em" }}>
-              {" "}
-              M1
-            </Typography>
-          </Box>
-        </Html>
+
+        <Text
+          {...fontProps2}
+          position={[17.9, -3, -4]}
+          color={"hsl(0, 0%, 7%)"}
+        >
+          M1
+        </Text>
       </group>
     </>
   );
